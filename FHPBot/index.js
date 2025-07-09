@@ -1,7 +1,8 @@
+require('dotenv').config();
+
 const fs = require('fs');
 const path = require('path');
 const { Client, Collection, GatewayIntentBits, REST, Routes, Partials } = require('discord.js');
-const config = require('./config.json');
 
 const client = new Client({
   intents: [
@@ -17,7 +18,6 @@ const client = new Client({
 client.commands = new Collection();
 const commands = [];
 
-// Load slash commands
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 for (const file of commandFiles) {
   const command = require(`./commands/${file}`);
@@ -29,16 +29,14 @@ for (const file of commandFiles) {
   }
 }
 
-// On ready
 client.once('ready', async () => {
   console.log(`✅ Logged in as ${client.user.tag}`);
 
-  // Set and update presence every 5 minutes
   const updatePresence = async () => {
     try {
-      const guild = await client.guilds.fetch(config.guildId);
+      const guild = await client.guilds.fetch(process.env.GUILD_ID);
       const members = await guild.members.fetch();
-      const count = members.filter(m => m.roles.cache.has(config.trooperRoleId)).size;
+      const count = members.filter(m => m.roles.cache.has(process.env.TROOPER_ROLE_ID)).size;
 
       client.user.setPresence({
         activities: [{ name: `Helping ${count} Troopers with their duties!`, type: 0 }],
@@ -50,10 +48,9 @@ client.once('ready', async () => {
   };
 
   await updatePresence();
-  setInterval(updatePresence, 1000 * 60 * 5); // Every 5 minutes
+  setInterval(updatePresence, 1000 * 60 * 5);
 
-  // Register slash commands
-  const rest = new REST({ version: '10' }).setToken(config.token);
+  const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);
   try {
     console.log('🔁 Registering slash commands...');
     await rest.put(
@@ -66,7 +63,6 @@ client.once('ready', async () => {
   }
 });
 
-// Handle slash command interactions
 client.on('interactionCreate', async interaction => {
   if (!interaction.isChatInputCommand()) return;
 
@@ -83,4 +79,4 @@ client.on('interactionCreate', async interaction => {
   }
 });
 
-client.login(config.token);
+client.login(process.env.TOKEN);
