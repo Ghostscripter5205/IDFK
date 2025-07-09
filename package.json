@@ -1,0 +1,15 @@
+{
+  "name": "fhpbot",
+  "version": "1.0.0",
+  "description": "Florida Highway Patrol Discord Bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.21.0",
+    "dotenv": "^17.1.0"
+  }
+}
