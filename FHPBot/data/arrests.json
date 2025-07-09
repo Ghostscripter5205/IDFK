@@ -1,0 +1,22 @@
+[
+  {
+    "subject": "Test",
+    "charges": "test",
+    "notes": "test",
+    "image": "https://cdn.discordapp.com/ephemeral-attachments/1391981860770418758/1392306243959390310/Screenshot_2025-07-08_at_7.07.19_PM.png?ex=686f0dbc&is=686dbc3c&hm=3cc301dac8255733316a1ab40c85e35e5c7fb571682c31cefd5cc8eb0b97cbb9&",
+    "staff": "ghosty097280",
+    "date": "2025-07-09T00:47:57.849Z"
+  },
+  {
+    "subject": "While on patrol, I observed ghost speeding.",
+    "charges": "Prison",
+    "notes": "None",
+    "arrestingOfficer": {
+      "id": "1313711587521073152",
+      "tag": "johnwelch717"
+    },
+    "image": "https://cdn.discordapp.com/ephemeral-attachments/1391981860770418758/1392311756420022382/Screenshot_2024-12-29_213343.png?ex=686f12de&is=686dc15e&hm=552c4a69de81590c17f3196b303a34476c58caafd06d4ad0bb8a937a2bcc9a85&",
+    "staff": "johnwelch717",
+    "date": "2025-07-09T01:09:51.758Z"
+  }
+]
