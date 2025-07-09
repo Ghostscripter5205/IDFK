@@ -1,0 +1,10 @@
+{
+  "token": "MTM5MTk3OTA4Mzc1NTQyNTg4NQ.GW3tbr.uKbj0erc0rlMLKwuz3hSXUjHW1-VsT2bMPXVbc",
+  "guildId": "1373495827363795114",
+  "logsChannelId": "1383741630133043267",     
+  "promoRoleId": "1373495827452133477",       
+  "staffRoleId": "1373495827452133477",  
+  "trooperRoleId": "1373495827452133477",    
+  "commandPrefix": "/",                      
+  "autoRoleDays": 14                         
+}
